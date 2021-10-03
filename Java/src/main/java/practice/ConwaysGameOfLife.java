@@ -5,16 +5,6 @@ import java.util.List;
 
 class Result {
 
-    static void printDList(List<List<Integer>> lst) {
-        System.out.println("list:  ");
-        for (List<Integer> chL: lst) {
-            for (int i : chL) {
-                System.out.print(i + ",");
-            }
-            System.out.println();
-        }
-    }
-
     /*
      * Complete the 'nextGeneration' function below.
      *
@@ -24,11 +14,27 @@ class Result {
      * Example Input: "0001000\n0001000\n0001000"
      * Example Return Value: "0000000\n0011100\n0000000"
      */
+
+    public static int countLiveNeighbours(List<List<Integer>> startingBoard, int row, int col) {
+
+        int live = 0;
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                if ((row - i == row && col - j == col) || row + i < 0 || col + j < 0 || row + i >= startingBoard.size() || col + j >= startingBoard.get(row).size() )
+                    continue;
+                if (startingBoard.get(row+i).get(col+j) == 1)
+                    live++;
+
+            }
+        }
+
+        return live;
+    }
+
     public static String nextGeneration(String startingBoard) {
 
         List<List<Integer>> startingBoardInt = new ArrayList<>();
         startingBoardInt.add(new ArrayList<>());
-
         for (int i = 0, j = 0;i < startingBoard.length(); i++) {
             if (startingBoard.charAt(i) == '\n'){
                 startingBoardInt.add(new ArrayList<>());
@@ -40,38 +46,31 @@ class Result {
 
         int[][] next = new int[startingBoardInt.size()][startingBoardInt.get(0).size()];
 
-        for (int l = 1; l < startingBoardInt.size() - 1; l++)
+        for (int row = 0; row < startingBoardInt.size() ; row++)
         {
-            for (int m = 1; m < startingBoardInt.get(0).size() - 1; m++)
+            for (int col = 0; col < startingBoardInt.get(row).size() ; col++)
             {
 
-                int alive = 0;
-                for (int i = -1; i <= 1; i++) {
-                    for (int j = -1; j <= 1; j++) {
-                        alive += startingBoardInt.get(l + i).get(m + j);
-                    }
+                int alive = countLiveNeighbours(startingBoardInt, row, col);
+
+                if ((startingBoardInt.get(row).get(col) == 1) && (alive < 2)) {
+                    next[row][col] = 0;
                 }
 
-                alive -= startingBoardInt.get(l).get(m);
-
-                if ((startingBoardInt.get(l).get(m) == 1) && (alive < 2)) {
-                    next[l][m] = 0;
+                else if ((startingBoardInt.get(row).get(col) == 1) && (alive == 2 || alive == 3)) {
+                    next[row][col] = 1;
                 }
 
-                else if ((startingBoardInt.get(l).get(m) == 1) && (alive == 2 || alive == 3)) {
-                    next[l][m] = 1;
+                else if ((startingBoardInt.get(row).get(col) == 1) && (alive >3)) {
+                    next[row][col] = 0;
                 }
 
-                else if ((startingBoardInt.get(l).get(m) == 1) && (alive >3)) {
-                    next[l][m] = 0;
-                }
-
-                else if ((startingBoardInt.get(l).get(m) == 0) && (alive == 3)) {
-                    next[l][m] = 1;
+                else if ((startingBoardInt.get(row).get(col) == 0) && (alive == 3)) {
+                    next[row][col] = 1;
                 }
 
                 else {
-                    next[l][m] = startingBoardInt.get(l).get(m);
+                    next[row][col] = startingBoardInt.get(row).get(col);
                 }
             }
         }
@@ -107,10 +106,14 @@ class Result {
 public class ConwaysGameOfLife {
 
     public ConwaysGameOfLife() {
-        String startingBoard = "0100010\n0011100\n0011100\n0011100\n0100010";
+        System.out.println("##########################################");
+        System.out.println("Conways Game of Life:");
+//        String startingBoard = "0100010\n0011100\n0011100\n0011100\n0100010";
+//        String startingBoard = "1001\n0111\n1001";
+        String startingBoard = "1010100100\n0010010001\n1001010110\n1010100101\n0000000000";
 
         String result = Result.nextGeneration(startingBoard);
-
         System.out.println(result);
+        System.out.println("##########################################");
     }
 }
