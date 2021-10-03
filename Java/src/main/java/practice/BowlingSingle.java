@@ -34,21 +34,20 @@ public class BowlingSingle {
                 }
             }
             if (i % 2 != 0) {
-                System.out.println("Frame: " + frame + "Score: " + totalScore);
+                System.out.println("Frame: " + frame + " Score: " + totalScore);
             }
         }
 
         for (; i < scores.length; i++) {
-            if (scores[i] == 10) {
-                totalScore += scores[i] + scores[i+1] +scores[i+2];
-            }
-            else if (i > 19 && scores[i-1] + scores[i] == 10){
+            if (i > 18 && scores[i-1] + scores[i] == 10) {
                 totalScore += scores[i] + scores[i+1];
+            }
+            else if (scores[i] == 10) {
+                totalScore += scores[i] + scores[i+1] +scores[i+2];
             }
             else {
                 totalScore += scores[i];
             }
-
         }
 
         return totalScore;
@@ -56,6 +55,9 @@ public class BowlingSingle {
 
     public BowlingSingle() {
         int [] scores = new int[]{5,4, 4,3, 7,3, 8,0, 7,3, 8,1, 7,3, 10,0, 8,1, 3,7,10,7,3,9};
-        System.out.println(getTotalScore(scores));
+        System.out.println("##########################################");
+        System.out.println("Bowling Single:");
+        System.out.println("Total Score: " + getTotalScore(scores));
+        System.out.println("##########################################");
     }
 }
