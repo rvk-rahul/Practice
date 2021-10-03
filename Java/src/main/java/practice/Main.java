@@ -1,14 +1,15 @@
 package practice;
 
-import static java.util.stream.Collectors.joining;
-
 public class Main {
+
     public static void main(String[] args) {
 
         new ConwaysGameOfLife();
+        new BowlingSingle();
 
     }
 }
+
 //
 ////import java.io.*;
 ////import java.math.*;

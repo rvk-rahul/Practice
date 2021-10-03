@@ -1,8 +1,2 @@
 /.idea
-/target/classes/practice/ConwaysGameOfLife.class
-/target/classes/practice/Event.class
-/target/classes/practice/EventAttribute.class
-/target/classes/practice/Main.class
-/target/classes/practice/Result.class
-/target/classes/practice/Solution.class
-/target/classes/practice/TempEnum.class
+/target/
