@@ -3,6 +3,10 @@ package practice;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Problem statement can be found on GeeksForGeeks
+ */
+
 class Result {
 
     /*
@@ -15,7 +19,7 @@ class Result {
      * Example Return Value: "0000000\n0011100\n0000000"
      */
 
-    public static int countLiveNeighbours(List<List<Integer>> startingBoard, int row, int col) {
+    private static int countLiveNeighbours(List<List<Integer>> startingBoard, int row, int col) {
 
         int live = 0;
         for (int i = -1; i < 2; i++) {

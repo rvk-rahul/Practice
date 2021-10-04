@@ -1,159 +1,96 @@
 package practice;
 
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
         new ConwaysGameOfLife();
         new BowlingSingle();
+        new WeakestChainLink();
 
+    }
+
+    static void printMat(List<List<Integer>> matrix) {
+        System.out.println("matrix:  ");
+        for (List<Integer> lst: matrix) {
+            for (int i : lst) {
+                System.out.print(i +",");
+            }
+            System.out.println();
+        }
+    }
+    static void printList(List<Integer> lst) {
+        System.out.println("list:  ");
+            for (int i : lst) {
+                System.out.print(i +",");
+            }
+    }
+
+    // Complete the countConnections function below.
+    static int countConnections(List<List<Integer>> matrix) {
+        int count = 0;
+
+        Integer [][] matrixArray = matrix.stream().map(e -> e.toArray(new Integer[0])).toArray(Integer[][] :: new);
+        int rowSize =  matrixArray[0].length;
+        int colSize = matrixArray.length;
+        System.out.println("r=" +rowSize + " c=" + colSize);
+        for (int row = 0; row < rowSize; row++) {
+            for(int col = 0; col < colSize; col++) {
+//                if (matrixArray[row][col] == 1) {
+                    // 4 corner case
+                    if (((row - 1 < 0) && (col -1 < 0)) && ((matrixArray[row+1][col]|matrixArray[row][col+1]|matrixArray[row+1][col+1])== 1) //(0,0)
+                            || ((row + 1 >= rowSize) && (col + 1 >= colSize)) && ((matrixArray[row -1][col]| matrixArray[row][col-1]| matrixArray[row-1][col-1]) == 1) //(m,n)
+                            || ((row + 1 >= rowSize) && (col - 1 < 0)) && ((matrixArray[row-1][col] | matrixArray[row][col+1] | matrixArray[row-1][col+1]) == 1) //(m,0)
+                            || ((row - 1 < 0) && (col + 1 >= colSize)) && ((matrixArray[row+1][col] | matrixArray[row][col-1] | matrixArray[row+1][col-1])) == 1) { //(0,n)
+//                        matrixArray[row][col] = 0;
+//                        count++;
+                    System.out.println("(" + row + ", " + col + ")");
+                    }
+                    // edge cases
+                    else if ((row - 1 < 0) //(0,y)
+                                || (row + 1 >= rowSize) // (m, y)
+                                || (col - 1 < 0) // (x, 0)
+                                || (col + 1 >= colSize)) { //(x, n)
+//                        matrixArray[row][col] = 0;
+//                        count++;
+                        System.out.println("(" + row + ", " + col + ")");
+                    }
+
+                    // middle cases
+                    else {
+//                        matrixArray[row][col] = 0;
+//                        count++;
+                        System.out.println("(" + row + ", " + col + ")");
+                    }
+//                    System.out.println("(" + row + ", " + col + ") Count: " + count);
+//                }
+            }
+        }
+
+        for (Integer[] row : matrixArray) {
+            for (int col: row){
+                System.out.print(row[col] + ", ");
+            }
+            System.out.println();
+        }
+        return count;
+    }
+
+    public static void main1(String[] args) {
+
+//        List<List<Integer>> matrix = new ArrayList<>();
+//
+//        matrix.add(new ArrayList<>(Arrays.asList(1, 0, 1, 1)));
+//        matrix.add(new ArrayList<>(Arrays.asList(0, 1, 1, 1)));
+//        matrix.add(new ArrayList<>(Arrays.asList(1, 0, 0, 1)));
+//
+//        int res = countConnections(matrix);
+//        System.out.println(res);
     }
 }
 
-//
-////import java.io.*;
-////import java.math.*;
-////import java.security.*;
-////import java.text.*;
-////import java.util.*;
-////import java.util.concurrent.*;
-////import java.util.function.*;
-////import java.util.regex.*;
-////import java.util.stream.*;
-////import static java.util.stream.Collectors.joining;
-////import static java.util.stream.Collectors.toList;
-////
-////public class Main {
-////
-////    static void printMat(List<List<Integer>> matrix) {
-////        System.out.println("matrix:  ");
-////        for (List<Integer> lst: matrix) {
-////            for (int i : lst) {
-////                System.out.print(i +",");
-////            }
-////            System.out.println();
-////        }
-////    }
-////    static void printList(List<Integer> lst) {
-////        System.out.println("list:  ");
-////            for (int i : lst) {
-////                System.out.print(i +",");
-////            }
-////    }
-////
-////    // Complete the countConnections function below.
-////    static int countConnections(List<List<Integer>> matrix) {
-////        int count = 0;
-////
-////        Integer [][] matrixArray = matrix.stream().map(e -> e.toArray(new Integer[0])).toArray(Integer[][] :: new);
-////        int rowSize =  matrixArray[0].length;
-////        int colSize = matrixArray.length;
-////        System.out.println("r=" +rowSize + " c=" + colSize);
-////        for (int row = 0; row < rowSize; row++) {
-////            for(int col = 0; col < colSize; col++) {
-//////                if (matrixArray[row][col] == 1) {
-////                    // 4 corner case
-////                    if (((row - 1 < 0) && (col -1 < 0)) && ((matrixArray[row+1][col]|matrixArray[row][col+1]|matrixArray[row+1][col+1])== 1) //(0,0)
-////                            || ((row + 1 >= rowSize) && (col + 1 >= colSize)) && ((matrixArray[row -1][col]| matrixArray[row][col-1]| matrixArray[row-1][col-1]) == 1) //(m,n)
-////                            || ((row + 1 >= rowSize) && (col - 1 < 0)) && ((matrixArray[row-1][col] | matrixArray[row][col+1] | matrixArray[row-1][col+1]) == 1) //(m,0)
-////                            || ((row - 1 < 0) && (col + 1 >= colSize)) && ((matrixArray[row+1][col] | matrixArray[row][col-1] | matrixArray[row+1][col-1])) == 1) { //(0,n)
-//////                        matrixArray[row][col] = 0;
-//////                        count++;
-////                    System.out.println("(" + row + ", " + col + ")");
-////                    }
-////                    // edge cases
-////                    else if ((row - 1 < 0) //(0,y)
-////                                || (row + 1 >= rowSize) // (m, y)
-////                                || (col - 1 < 0) // (x, 0)
-////                                || (col + 1 >= colSize)) { //(x, n)
-//////                        matrixArray[row][col] = 0;
-//////                        count++;
-////                        System.out.println("(" + row + ", " + col + ")");
-////                    }
-////
-////                    // middle cases
-////                    else {
-//////                        matrixArray[row][col] = 0;
-//////                        count++;
-////                        System.out.println("(" + row + ", " + col + ")");
-////                    }
-//////                    System.out.println("(" + row + ", " + col + ") Count: " + count);
-//////                }
-////            }
-////        }
-////
-////        for (Integer[] row : matrixArray) {
-////            for (int col: row){
-////                System.out.print(row[col] + ", ");
-////            }
-////            System.out.println();
-////        }
-////        return count;
-////    }
-////
-////    public static void main(String[] args) throws IOException {
-////        List<int[]> lstA = new ArrayList<>();
-////        lstA.add(new int[]{ 5, 2, 4, 6, 3, 7});
-////        lstA.add(new int[]{ 5, 2, 4, 6, 3});
-////        lstA.add(new int[]{ 5, 100, 2, 300, 3});
-////        lstA.add(new int[]{ 5, 100, 200, 300, 3});
-////        lstA.add(new int[]{ 5, 100, 500, 300, 3});
-////        lstA.add(new int[]{ 5, 2, 4, 6, 3, 7});
-////        lstA.add(new int[]{ 5, 4, 2, 6, 3, 7});
-////        lstA.add(new int[]{ 5, 4, 2, 2, 6, 3, 7});
-////        lstA.add(new int[]{ 5, 4, 2, 2, 2, 3, 7});
-////        lstA.add(new int[]{ 5, 4, 2, 3, 4, 5, 7});
-////        lstA.add(new int[]{ 5, 4, 5, 5, 2, 3, 7});
-////        lstA.add(new int[]{ 1, 4, 5, 5, 2, 3, 1});
-////        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1});
-////        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1, 9, 3, 5, 3, 6});
-////        lstA.add(new int[]{ 2, 5, 6, 6, 3, 2, 2, 9, 4, 6, 4, 7});
-////        lstA.add(new int[]{ 2, 5, 6, 6, 3, 1, 2, 9, 4, 6, 4, 7});
-////        lstA.add(new int[]{ 2, 5, 6, 6, 2, 1, 3, 9, 4, 6, 4, 7});
-////        lstA.add(new int[]{ 2, 5, 6, 6, 2, 1, 2, 9, 4, 6, 4, 7});
-////        lstA.add(new int[]{ 2, 1, 2, 1, 5, 5, 5, 5, 5, 5, 5, 5});
-////        lstA.add(new int[]{ 2, 1, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5});
-////        lstA.add(new int[]{ 2, 2, 2, 1, 5, 5, 5, 5, 5, 5, 5, 5});
-////        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1});
-////
-////        List<Integer> ans = new ArrayList<>();
-////        ans.add(5);
-////        ans.add(8);
-////        ans.add(400);
-////        ans.add(400);
-////        ans.add(400);
-////        ans.add(5);
-////        ans.add(5);
-////        ans.add(5);
-////        ans.add(4);
-////        ans.add(6);
-////        ans.add(6);
-////        ans.add(6);
-////        ans.add(5);
-////        ans.add(3);
-////        ans.add(5);
-////        ans.add(5);
-////        ans.add(5);
-////        ans.add(4);
-////        ans.add(2);
-////        ans.add(3);
-////        ans.add(3);
-////        ans.add(5);
-////
-////        for (int i = 0; i< ans.size(); i++) {
-////            System.out.println(ans.get(i) + ":" + Solution.solution(lstA.get(i)));
-////        }
-//////        List<List<Integer>> matrix = new ArrayList<>();
-//////
-//////        matrix.add(new ArrayList<>(Arrays.asList(1, 0, 1, 1)));
-//////        matrix.add(new ArrayList<>(Arrays.asList(0, 1, 1, 1)));
-//////        matrix.add(new ArrayList<>(Arrays.asList(1, 0, 0, 1)));
-//////
-//////        int res = countConnections(matrix);
-//////        System.out.println(res);
-////    }
-////}
-////
 //////import java.io.*;
 //////import java.math.*;
 //////import java.security.*;

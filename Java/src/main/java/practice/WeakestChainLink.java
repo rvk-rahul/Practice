@@ -6,29 +6,9 @@ import java.util.*;
 // you can write to stdout for debugging purposes, e.g.
 // System.out.println("this is a debug message");
 //int A[] = new int[]{5,2,4,6,3,7};
-class Solution {
+public class WeakestChainLink {
 
-    public static void lstPrintInt(List<Integer> lst){
-        for (int i: lst) {
-            System.out.println(i);
-        }
-    }
-    public static void lstPrintStr(List<String> lst){
-        for (String i: lst) {
-            System.out.println(i);
-        }
-    }
-    public static void treePrintInt(TreeSet<Integer> treeSet){
-        for (int i: treeSet) {
-            System.out.println(i);
-        }
-    }
-    public static void printMap(Map<Character, Integer> characterIntegerMap){
-        for (Map.Entry<Character, Integer> entry: characterIntegerMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-    }
-    public static int solution(int [] A) {
+    private static int solution(int [] A) {
         // write your code in Java SE 8
 
         // find second minimum
@@ -103,5 +83,59 @@ class Solution {
 //            }
 //        }
 //        return count;
+    }
+
+    public WeakestChainLink() {
+        List<int[]> lstA = new ArrayList<>();
+        lstA.add(new int[]{ 5, 2, 4, 6, 3, 7});
+        lstA.add(new int[]{ 5, 2, 4, 6, 3});
+        lstA.add(new int[]{ 5, 100, 2, 300, 3});
+        lstA.add(new int[]{ 5, 100, 200, 300, 3});
+        lstA.add(new int[]{ 5, 100, 500, 300, 3});
+        lstA.add(new int[]{ 5, 2, 4, 6, 3, 7});
+        lstA.add(new int[]{ 5, 4, 2, 6, 3, 7});
+        lstA.add(new int[]{ 5, 4, 2, 2, 6, 3, 7});
+        lstA.add(new int[]{ 5, 4, 2, 2, 2, 3, 7});
+        lstA.add(new int[]{ 5, 4, 2, 3, 4, 5, 7});
+        lstA.add(new int[]{ 5, 4, 5, 5, 2, 3, 7});
+        lstA.add(new int[]{ 1, 4, 5, 5, 2, 3, 1});
+        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1});
+        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1, 9, 3, 5, 3, 6});
+        lstA.add(new int[]{ 2, 5, 6, 6, 3, 2, 2, 9, 4, 6, 4, 7});
+        lstA.add(new int[]{ 2, 5, 6, 6, 3, 1, 2, 9, 4, 6, 4, 7});
+        lstA.add(new int[]{ 2, 5, 6, 6, 2, 1, 3, 9, 4, 6, 4, 7});
+        lstA.add(new int[]{ 2, 5, 6, 6, 2, 1, 2, 9, 4, 6, 4, 7});
+        lstA.add(new int[]{ 2, 1, 2, 1, 5, 5, 5, 5, 5, 5, 5, 5});
+        lstA.add(new int[]{ 2, 1, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5});
+        lstA.add(new int[]{ 2, 2, 2, 1, 5, 5, 5, 5, 5, 5, 5, 5});
+        lstA.add(new int[]{ 1, 4, 5, 5, 2, 1, 1});
+
+        List<Integer> ans = new ArrayList<>();
+        ans.add(5);
+        ans.add(8);
+        ans.add(400);
+        ans.add(400);
+        ans.add(400);
+        ans.add(5);
+        ans.add(5);
+        ans.add(5);
+        ans.add(4);
+        ans.add(6);
+        ans.add(6);
+        ans.add(6);
+        ans.add(5);
+        ans.add(3);
+        ans.add(5);
+        ans.add(5);
+        ans.add(5);
+        ans.add(4);
+        ans.add(2);
+        ans.add(3);
+        ans.add(3);
+        ans.add(5);
+
+        for (int i = 0; i< ans.size(); i++) {
+            System.out.println(ans.get(i) + ":" + solution(lstA.get(i)));
+        }
     }
 }
