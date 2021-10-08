@@ -6,6 +6,7 @@ public class Main {
 
         new ConwaysGameOfLife();
         new BowlingSingle();
+        new LongestPalindrome();
 
     }
 }
