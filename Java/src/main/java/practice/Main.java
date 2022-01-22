@@ -9,6 +9,7 @@ public class Main {
         new LongestPalindrome();
         new FindMissingNumberInArray();
         new TrailingZeroesInFactorial();
+        new SimpleFraction();
 
     }
 }
