@@ -8,6 +8,7 @@ public class Main {
         new BowlingSingle();
         new LongestPalindrome();
         new FindMissingNumberInArray();
+        new TrailingZeroesInFactorial();
 
     }
 }
