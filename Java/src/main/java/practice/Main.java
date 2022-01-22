@@ -10,6 +10,7 @@ public class Main {
         new FindMissingNumberInArray();
         new TrailingZeroesInFactorial();
         new SimpleFraction();
+        new NthNaturalNumber();
 
     }
 }
