@@ -11,6 +11,7 @@ public class Main {
         new TrailingZeroesInFactorial();
         new SimpleFraction();
         new NthNaturalNumber();
+        new ReverseWordsInAString();
 
     }
 }
