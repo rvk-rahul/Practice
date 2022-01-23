@@ -12,6 +12,7 @@ public class Main {
         new SimpleFraction();
         new NthNaturalNumber();
         new ReverseWordsInAString();
+        new LongestCommonPrefixInArray();
 
     }
 }
