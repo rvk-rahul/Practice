@@ -13,6 +13,7 @@ public class Main {
         new NthNaturalNumber();
         new ReverseWordsInAString();
         new LongestCommonPrefixInArray();
+        new RomanNumberToInteger();
 
     }
 }
