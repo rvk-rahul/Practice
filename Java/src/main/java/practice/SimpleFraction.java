@@ -8,11 +8,11 @@ public class SimpleFraction {
 
     private static String getDecimal(int numerator, int denominator) {
 
-        if (numerator == 0)
-            return String.valueOf(0);
+        if (numerator == 0 && denominator != 0)
+            return "0";
 
         if (denominator == 0)
-            return "";
+            return "undefined";
 
         StringBuilder result = new StringBuilder();
 
@@ -24,7 +24,7 @@ public class SimpleFraction {
 
         long quotient = numerator / denominator;
         result.append(quotient);
-        long remainder = (numerator % denominator) * 10;
+        long remainder = (long)(numerator % denominator) * 10;
 
         if (remainder == 0)
             return result.toString();
@@ -75,7 +75,7 @@ public class SimpleFraction {
         System.out.println(numerator + "/" + denominator + ": " + getDecimal(numerator, denominator));
 
         numerator = -100;
-        denominator = 5;
+        denominator = 6;
         System.out.println(numerator + "/" + denominator + ": " + getDecimal(numerator, denominator));
 
         System.out.println("######################################");
