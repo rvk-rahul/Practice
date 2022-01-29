@@ -1,6 +1,7 @@
 package practice;
 
 // https://www.geeksforgeeks.org/longest-prefix-also-suffix/
+// Overlap is allowed
 public class LongestPrefixSuffix {
 
     private static int lps(String s) {
