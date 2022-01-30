@@ -6,7 +6,7 @@ import java.util.Map;
 // https://www.geeksforgeeks.org/converting-roman-numerals-decimal-lying-1-3999/
 public class RomanNumberToInteger {
 
-    static int romanToDecimal(String str) {
+    int romanToDecimal(String str) {
         // code here
         if (str.length() == 0)
             return 0;
@@ -22,7 +22,7 @@ public class RomanNumberToInteger {
 
         int res = romanIntMap.get(str.charAt(str.length() - 1));
         int prev = res;
-        for (int i = str.length() - 2; i >= 0; i--){
+        for (int i = str.length() - 2; i >= 0; i--) {
             int curr = romanIntMap.get(str.charAt(i));
             if (curr < prev) {
                 res -= curr;

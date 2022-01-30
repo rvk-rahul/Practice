@@ -2,7 +2,7 @@ package practice;
 
 public class LongestPalindrome {
 
-    private static boolean isPalindrome(String str) {
+    private boolean isPalindrome(String str) {
         for (int i = 0, j = str.length() - 1; i < j; i++, j-- ) {
             if (str.charAt(i) != str.charAt(j))
                 return false;
@@ -10,7 +10,7 @@ public class LongestPalindrome {
         return true;
     }
 
-    private static void getN3Solution(String [] strArr) {
+    private void getN3Solution(String [] strArr) {
 
         for (String str: strArr) {
             int maxLength = 1;
@@ -25,7 +25,7 @@ public class LongestPalindrome {
         }
     }
 
-    private static void getN2Solution(String [] strArr) {
+    private void getN2Solution(String [] strArr) {
         for (String str : strArr) {
             int maxLength = 1;
 

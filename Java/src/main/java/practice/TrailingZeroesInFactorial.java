@@ -3,7 +3,7 @@ package practice;
 // https://www.geeksforgeeks.org/count-trailing-zeroes-factorial-number/
 public class TrailingZeroesInFactorial {
 
-    private static int getTrailingZeroesInFactorial(int n) {
+    private int getTrailingZeroesInFactorial(int n) {
         if (n <0 )
             return -1;
 

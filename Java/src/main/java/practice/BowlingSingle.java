@@ -12,7 +12,7 @@ Score System:
 
 public class BowlingSingle {
 
-    private static int getTotalScore(int[] scores) {
+    private int getTotalScore(int[] scores) {
 
         int totalScore = 0;
         int frame = 0;

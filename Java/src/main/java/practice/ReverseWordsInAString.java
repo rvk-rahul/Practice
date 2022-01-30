@@ -6,7 +6,7 @@ import java.util.List;
 // https://www.geeksforgeeks.org/reverse-words-in-a-given-string/
 public class ReverseWordsInAString {
 
-    private static String reverseWords(String S) {
+    private String reverseWords(String S) {
 
         List<String> words = Arrays.asList(S.split("\\."));
 

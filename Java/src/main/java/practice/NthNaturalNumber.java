@@ -3,7 +3,7 @@ package practice;
 // https://www.geeksforgeeks.org/nth-natural-number-after-removing-all-numbers-consisting-of-the-digit-9/
 public class NthNaturalNumber {
 
-    private static long findNth(long N) {
+    private long findNth(long N) {
 
         long res = 0;
 

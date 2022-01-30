@@ -4,7 +4,7 @@ package practice;
 // Overlap is allowed
 public class LongestPrefixSuffix {
 
-    private static int lps(String s) {
+    private int lps(String s) {
         int[] mat = new int[s.length()];
         int i = 0, j = 1;
         while(j < s.length())

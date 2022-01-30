@@ -3,7 +3,7 @@ package practice;
 import java.util.ArrayList;
 import java.util.List;
 
-class Result {
+public class ConwaysGameOfLife {
 
     /*
      * Complete the 'nextGeneration' function below.
@@ -15,7 +15,7 @@ class Result {
      * Example Return Value: "0000000\n0011100\n0000000"
      */
 
-    public static int countLiveNeighbours(List<List<Integer>> startingBoard, int row, int col) {
+    public int countLiveNeighbours(List<List<Integer>> startingBoard, int row, int col) {
 
         int live = 0;
         for (int i = -1; i < 2; i++) {
@@ -31,7 +31,7 @@ class Result {
         return live;
     }
 
-    public static String nextGeneration(String startingBoard) {
+    public String nextGeneration(String startingBoard) {
 
         List<List<Integer>> startingBoardInt = new ArrayList<>();
         startingBoardInt.add(new ArrayList<>());
@@ -101,9 +101,6 @@ class Result {
 
         return result;
     }
-}
-
-public class ConwaysGameOfLife {
 
     public ConwaysGameOfLife() {
         System.out.println("##########################################");
@@ -112,7 +109,7 @@ public class ConwaysGameOfLife {
 //        String startingBoard = "1001\n0111\n1001";
         String startingBoard = "1010100100\n0010010001\n1001010110\n1010100101\n0000000000";
 
-        String result = Result.nextGeneration(startingBoard);
+        String result = nextGeneration(startingBoard);
         System.out.println(result);
         System.out.println("##########################################");
     }

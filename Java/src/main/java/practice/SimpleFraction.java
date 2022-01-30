@@ -6,7 +6,7 @@ import java.util.Map;
 // https://www.geeksforgeeks.org/represent-the-fraction-of-two-numbers-in-the-string-format/
 public class SimpleFraction {
 
-    private static String getDecimal(int numerator, int denominator) {
+    private String getDecimal(int numerator, int denominator) {
 
         if (numerator == 0 && denominator != 0)
             return "0";

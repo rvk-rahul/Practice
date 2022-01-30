@@ -3,7 +3,7 @@ package practice;
 // https://www.geeksforgeeks.org/longest-common-prefix-using-word-by-word-matching/
 public class LongestCommonPrefixInArray {
 
-    static String getCommonPrefix(String s1, String s2) {
+    String getCommonPrefix(String s1, String s2) {
 
         StringBuilder res = new StringBuilder("");
 
@@ -19,7 +19,7 @@ public class LongestCommonPrefixInArray {
         return res.toString().equals("") ? "-1" : res.toString();
     }
 
-    static String longestCommonPrefix(String arr[], int n) {
+    String longestCommonPrefix(String arr[], int n) {
 
         if (n < 1)
             return "-1";
