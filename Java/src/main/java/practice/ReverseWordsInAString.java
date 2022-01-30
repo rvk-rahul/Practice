@@ -1,22 +1,26 @@
 package practice;
 
+import java.util.Arrays;
+import java.util.List;
+
 // https://www.geeksforgeeks.org/reverse-words-in-a-given-string/
 public class ReverseWordsInAString {
 
     private static String reverseWords(String S) {
 
-        StringBuilder res = new StringBuilder();
-        int j = S.length();
-        for (int i = S.length() - 1; i >=0 ; i--) {
-            if (S.charAt(i) == '.') {
-                res.append(S, i + 1, j);
-                res.append(".");
-                j = i;
-            }
-        }
-        res.append(S, 0, j);
+        List<String> words = Arrays.asList(S.split("\\."));
 
-        return res.toString();
+        String res = "";
+
+        for (int i = words.size() - 1; i >= 0; i--) {
+            if (i == 0)
+                res = res + words.get(0);
+
+            else
+                res = res + words.get(i) + ".";
+        }
+
+        return res;
     }
 
     public ReverseWordsInAString() {
