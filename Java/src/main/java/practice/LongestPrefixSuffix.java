@@ -5,6 +5,10 @@ package practice;
 public class LongestPrefixSuffix {
 
     private int lps(String s) {
+
+        if (s.length() <= 1)
+            return 0;
+
         int[] mat = new int[s.length()];
         int i = 0, j = 1;
         while(j < s.length())
@@ -32,7 +36,8 @@ public class LongestPrefixSuffix {
         System.out.println("##############################");
         System.out.println("Longest Prefix Suffix");
         String S = "yycgicgyyycg";
-        System.out.println(S.length());
+        System.out.println("S: " + S + " Length of lps: " + lps(S));
+        S = "";
         System.out.println("S: " + S + " Length of lps: " + lps(S));
 
         System.out.println("##############################");
