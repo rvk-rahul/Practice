@@ -9,20 +9,20 @@ public class FindSubStringInString {
             return -1;
         }
 
-        int i =0, j = 0;
+        int i =0, counter = 0;
         int startIndex = -1;
 
-        while (i < s.length() && j < x.length()) {
-            if (s.charAt(i) == x.charAt(j)) {
+        while (i < s.length() && counter < x.length()) {
+            if (s.charAt(i) == x.charAt(counter)) {
                 if (startIndex == -1)
                     startIndex = i;
                 i++;
-                j++;
+                counter++;
             }
 
             else {
-                i = i - j + 1;
-                j = 0;
+                i = i - counter + 1;
+                counter = 0;
                 startIndex = -1;
             }
         }
@@ -39,7 +39,11 @@ public class FindSubStringInString {
 
         String S = "aaaaab";
         String X = "aaab" ;
-        System.out.println("S: " + S + " X: " + X + ": First Index: " + strstr(S,X));
+        System.out.println("S: " + S + " X: " + X + ": First Index: " + strstr(S, X));
+
+        S = "geeksfffffoorrfoorforgeeks";
+        X = "for";
+        System.out.println("S: " + S + " X: " + X + ": First Index: " + strstr(S, X));
 
         System.out.println("##############################");
     }
