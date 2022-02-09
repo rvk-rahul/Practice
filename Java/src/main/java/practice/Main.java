@@ -17,5 +17,6 @@ public class Main {
         new LongestPrefixSuffix();
         new FindSubStringInString();
         new LookAndSayPattern();
+        new SegregateAnArray();
     }
 }
