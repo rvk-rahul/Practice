@@ -37,7 +37,7 @@ public class SegregateAnArray {
 
     public SegregateAnArray() {
         System.out.println("##############################");
-        System.out.println("Next higher palindromic number using the same set of digits");
+        System.out.println("Segregate An Array");
         int arr[] = {3, 0, 4, -9, -6, 0, -4, 0, 4, -2, 6, 0, 5, 0, 9};
         segregateTheArray(arr);
 

@@ -18,5 +18,6 @@ public class Main {
         new FindSubStringInString();
         new LookAndSayPattern();
         new SegregateAnArray();
+        new FindSmallestNumberNotSum();
     }
 }
