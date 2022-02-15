@@ -19,5 +19,7 @@ public class Main {
         new LookAndSayPattern();
         new SegregateAnArray();
         new FindSmallestNumberNotSum();
+        new EquilibriumPointOfArray();
+
     }
 }
