@@ -20,6 +20,7 @@ public class Main {
         new SegregateAnArray();
         new FindSmallestNumberNotSum();
         new EquilibriumPointOfArray();
+        new RotateArray();
 
     }
 }
