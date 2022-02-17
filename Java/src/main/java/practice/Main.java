@@ -22,6 +22,6 @@ public class Main {
         new EquilibriumPointOfArray();
         new RotateArray();
         new PlusOne();
-
+        new AlternativePositiveAndNegativeNumber();
     }
 }
