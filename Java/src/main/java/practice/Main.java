@@ -13,7 +13,7 @@ public class Main {
         new ReverseWordsInAString();
         new LongestCommonPrefixInArray();
         new RomanNumberToInteger();
-//        new NextHigherPalindrome();
+        new NextHigherPalindrome();
         new LongestPrefixSuffix();
         new FindSubStringInString();
         new LookAndSayPattern();
