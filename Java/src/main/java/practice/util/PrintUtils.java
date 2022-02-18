@@ -44,4 +44,27 @@ public class PrintUtils {
 
     }
 
+    public static void print2DArray(int arr[][]) {
+        Integer[][] array = new Integer[arr.length][];
+
+        for (int i = 0; i < arr.length; i++) {
+            array[i] = Arrays.stream(arr[i]).boxed().toArray(Integer[]::new);
+        }
+
+        print2DArray(array);
+
+    }
+
+    public static <T> void print2DArray(T arr[][]) {
+        if (arr == null)
+            return;
+
+        System.out.println("[");
+        int length = arr.length;
+        for (int i = 0; i < length; i++) {
+            printArray(arr[i]);
+        }
+        System.out.println("]");
+    }
+
 }

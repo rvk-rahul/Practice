@@ -23,5 +23,7 @@ public class Main {
         new RotateArray();
         new PlusOne();
         new AlternativePositiveAndNegativeNumber();
+        new MEXEquality();
+
     }
 }
