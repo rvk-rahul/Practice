@@ -7,7 +7,23 @@ import java.util.Set;
 // Question at src/main/resources/QuestionInImage/MEXEquality
 public class MEXEquality {
 
-    static int findMEX(int[] allNumber) {
+    static int findMEX(int[][] Arr, int N, int M) {
+
+        Set<Integer> allNumberSet = new HashSet<>();
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                allNumberSet.add(Arr[i][j]);
+            }
+        }
+
+        int [] allNumber = new int[allNumberSet.size()];
+
+        int n = 0;
+        for (int s: allNumberSet) {
+            allNumber[n] = s;
+            n++;
+        }
         Arrays.sort(allNumber);
 
         int MEX = 1;
@@ -54,23 +70,7 @@ public class MEXEquality {
         // code here
         int result = 0;
 
-        Set<Integer> allNumberSet = new HashSet<>();
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                allNumberSet.add(Arr[i][j]);
-            }
-        }
-
-        int [] allNumber = new int[allNumberSet.size()];
-
-        int n = 0;
-        for (int s: allNumberSet) {
-            allNumber[n] = s;
-            n++;
-        }
-
-        int MEX = findMEX(allNumber);
+        int MEX = findMEX(Arr, N, M);
 
         for (int i = 0; i < N; i++) {
             result += minOperations(Arr[i], Arr[i].length, MEX);
@@ -90,6 +90,9 @@ public class MEXEquality {
         System.out.println(getMEXEquality(Arr.length, Arr[0].length, Arr));
 
         Arr = new int[][]{{10,3,3,9,1},{10,5,8,1,10}};
+        System.out.println(getMEXEquality(Arr.length, Arr[0].length, Arr));
+
+        Arr = new int[][]{{10,3,3,9,1},{10,5,8,1,10},{1,2,4,6,7}};
         System.out.println(getMEXEquality(Arr.length, Arr[0].length, Arr));
 
         System.out.println("##############################");
