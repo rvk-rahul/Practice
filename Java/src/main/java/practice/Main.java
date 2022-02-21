@@ -24,6 +24,9 @@ public class Main {
         new AlternativePositiveAndNegativeNumber();
         new MEXEquality();
         new SmallestMissingPositiveInteger();
+        new MaxOccurringCharacter();
+        new CountDiffDivisibleBy3();
+        new WordMachineStack();
 
     }
 }
