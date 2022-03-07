@@ -1,4 +1,4 @@
-package practice;
+package practice.others;
 /*
 Problem Statement:
 Scoring rules:

@@ -1,7 +1,7 @@
 package practice;
 
 import practice.array.*;
-import practice.others.Fractle;
+import practice.others.*;
 
 
 public class Main {
