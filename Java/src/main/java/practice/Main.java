@@ -1,5 +1,9 @@
 package practice;
 
+import practice.array.*;
+import practice.others.Fractle;
+
+
 public class Main {
 
     public static void main(String[] args) {
@@ -27,6 +31,6 @@ public class Main {
         new MaxOccurringCharacter();
         new CountDiffDivisibleBy3();
         new WordMachineStack();
-
+        new Fractle();
     }
 }

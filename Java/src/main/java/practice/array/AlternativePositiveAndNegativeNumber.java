@@ -1,4 +1,4 @@
-package practice;
+package practice.array;
 
 import practice.util.PrintUtils;
 

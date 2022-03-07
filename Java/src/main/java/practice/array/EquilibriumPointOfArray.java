@@ -1,4 +1,4 @@
-package practice;
+package practice.array;
 
 //https://www.geeksforgeeks.org/equilibrium-index-of-an-array/
 public class EquilibriumPointOfArray {
