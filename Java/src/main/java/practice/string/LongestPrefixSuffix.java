@@ -1,4 +1,4 @@
-package practice;
+package practice.string;
 
 // https://www.geeksforgeeks.org/longest-prefix-also-suffix/
 // Overlap is allowed

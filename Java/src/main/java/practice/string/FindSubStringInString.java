@@ -1,4 +1,4 @@
-package practice;
+package practice.string;
 
 // https://www.geeksforgeeks.org/check-string-substring-another/
 public class FindSubStringInString {

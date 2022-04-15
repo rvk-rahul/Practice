@@ -1,43 +1,49 @@
 package practice;
 
 import practice.array.*;
-import practice.others.*;
+import practice.math.*;
+import practice.other.*;
+import practice.string.*;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-        new LongestPalindrome();
+        // Array Questions
+        new EquilibriumPointOfArray();
+        new RotateArray();
+        new PlusOne();
+        new AlternativePositiveAndNegativeNumber();
+        new CountFrequencyInArray();
+        new MergeTwoSortedList();
+        new SegregateAnArray();
         new FindMissingNumberInArray();
+        new SmallestMissingPositiveInteger();
+
+        // Math Questions
         new TrailingZeroesInFactorial();
         new SimpleFraction();
         new NthNaturalNumber();
+
+        // String Questions
+        new LongestPalindrome();
         new ReverseWordsInAString();
         new LongestCommonPrefixInArray();
         new RomanNumberToInteger();
         new LongestPrefixSuffix();
         new FindSubStringInString();
         new LookAndSayPattern();
-        new SegregateAnArray();
         new FindSmallestNumberNotSum();
+        new MaxOccurringCharacter();
 
-        // Arrays Questions
-        new EquilibriumPointOfArray();
-        new RotateArray();
-        new PlusOne();
-        new AlternativePositiveAndNegativeNumber();
-        new CountFrequencyInArray(); //TODO: check this
-
-        // Others
+        // Other Questions
         new ConwaysGameOfLife();
         new BowlingSingle();
-        new MEXEquality();
-        new SmallestMissingPositiveInteger();
-        new MaxOccurringCharacter();
         new CountDiffDivisibleBy3();
         new WordMachineStack();
         new Fractle();
+        new CheckIfSplit();
 
     }
 }

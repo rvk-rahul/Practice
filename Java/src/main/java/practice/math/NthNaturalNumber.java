@@ -1,4 +1,4 @@
-package practice;
+package practice.math;
 
 // https://www.geeksforgeeks.org/nth-natural-number-after-removing-all-numbers-consisting-of-the-digit-9/
 public class NthNaturalNumber {

@@ -1,4 +1,4 @@
-package practice;
+package practice.string;
 
 // https://www.geeksforgeeks.org/longest-common-prefix-using-word-by-word-matching/
 public class LongestCommonPrefixInArray {

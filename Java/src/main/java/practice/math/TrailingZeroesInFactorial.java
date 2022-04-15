@@ -1,4 +1,4 @@
-package practice;
+package practice.math;
 
 // https://www.geeksforgeeks.org/count-trailing-zeroes-factorial-number/
 public class TrailingZeroesInFactorial {

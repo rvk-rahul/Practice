@@ -8,15 +8,19 @@ public class CountFrequencyInArray {
     void countFrequency(int arr[], int N, int P) {
 
         for (int i = 0; i < N; i++) {
-            arr[i] = arr[i] - 1;
+            if (arr[i] > N)
+                arr[i] = 0;
         }
 
         for (int i = 0; i < N; i++) {
-            arr[arr[i] % N] = arr[arr[i] % N] + N;
+            if (arr[i] != 0 && arr[i] % (N + 1) != 0) {
+                int indexToChange = arr[i] % (N + 1);
+                arr[indexToChange - 1] = arr[indexToChange - 1] + N + 1;
+            }
         }
 
         for (int i = 0; i < N; i++) {
-            arr[i] = arr[i] / N;
+            arr[i] = arr[i] / (N + 1);
         }
     }
 

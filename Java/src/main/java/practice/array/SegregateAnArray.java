@@ -1,4 +1,4 @@
-package practice;
+package practice.array;
 
 // In the given array segregate the +ve, -ve and zero. First +ve numbers should be there, then -ve and then zeros.
 public class SegregateAnArray {

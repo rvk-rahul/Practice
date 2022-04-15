@@ -1,4 +1,4 @@
-package practice.others;
+package practice.other;
 
 public class Fractle {
 
