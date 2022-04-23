@@ -1,6 +1,6 @@
 package practice.array;
 
-import practice.util.PrintUtils;
+import practice.util.ArrayUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -35,10 +35,10 @@ public class AlternativePositiveAndNegativeNumber {
         System.out.println("Alternate positive and negative number");
         int [] arr = {9, 4, -2, -1, 5, 0, -5, -3, 2};
         rearrange(arr, arr.length);
-        PrintUtils.printArray(arr);
+        ArrayUtils.printArray(arr);
         arr = new int[]{-5, -2, 5, 2, 4, 7, 1, 8, 0, -8};
         rearrange(arr, arr.length);
-        PrintUtils.printArray(arr);
+        ArrayUtils.printArray(arr);
 
         System.out.println("##############################");
     }

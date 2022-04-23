@@ -1,0 +1,27 @@
+private boolean verifyIfHasInvoicing(Match match) {
+
+     boolean addresseePaymentHandlingEnabled = false;
+     boolean requesterPaymentHandlingEnabled = false;
+
+     AddresseePayment addresseePayment = match.getAddressee().getPayment();
+
+     if (addresseePayment != null) {
+         addresseePaymentHandlingEnabled = match.getAddressee().getPayment().isPaymentHandlingEnabled();
+     }
+
+     RequesterPayment requesterPayment = match.getRequester().getPayment();
+
+     if (requesterPayment != null) {
+         requesterPaymentHandlingEnabled = match.getRequester().getPayment().isPaymentHandlingEnabled();
+     }
+
+     boolean invoicing = false;
+
+     if (addresseePaymentHandlingEnabled == true || requesterPaymentHandlingEnabled == true) {
+         invoicing = true;
+     } else {
+        invoicing = false;
+     }
+
+     return invoicing;
+ }

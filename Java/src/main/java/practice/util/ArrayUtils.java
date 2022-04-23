@@ -2,7 +2,7 @@ package practice.util;
 
 import java.util.Arrays;
 
-public class PrintUtils {
+public class ArrayUtils {
 
     public static void printArray(int[] arr) {
 

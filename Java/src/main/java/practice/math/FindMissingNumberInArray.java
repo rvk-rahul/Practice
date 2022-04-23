@@ -1,4 +1,4 @@
-package practice.array;
+package practice.math;
 
 
 // https://www.geeksforgeeks.org/find-the-missing-number/

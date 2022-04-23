@@ -1,4 +1,4 @@
-package practice;
+package practice.string;
 
 // https://practice.geeksforgeeks.org/problems/decode-the-pattern1138/1/
 public class LookAndSayPattern {

@@ -1,4 +1,4 @@
-package practice;
+package practice.string;
 
 // https://www.geeksforgeeks.org/count-of-different-numbers-divisible-by-3-that-can-be-obtained-by-changing-at-most-one-digit/
 public class CountDiffDivisibleBy3 {
